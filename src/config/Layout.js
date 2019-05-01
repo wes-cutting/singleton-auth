@@ -12,7 +12,7 @@ class Layout extends Component {
                 <Navbar bg="dark" expand="lg" variant="dark">
                     <Navbar.Brand>
                         <Link to='/'>
-                            Pluster
+                            Template
                         </Link>
                     </Navbar.Brand>
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -24,19 +24,14 @@ class Layout extends Component {
                         <Nav>
                             <NavDropdown className="float-right" title="Dropdown" id="basic-nav-dropdown">
                                 <NavDropdown.Item>
-                                    <Link to='/login'>
-                                        Login
-                                    </Link>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <Link to='/regis'>
-                                        Register
+                                    <Link to='/'>
+                                        Home
                                     </Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item>
-                                    <Link to='/'>
-                                        Home
+                                    <Link to='/entry'>
+                                        Entry
                                     </Link>
                                 </NavDropdown.Item>
                             </NavDropdown>
