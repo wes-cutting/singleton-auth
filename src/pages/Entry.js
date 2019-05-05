@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import { Login } from '../components/auth/Login'
 import { Register } from '../components/auth/Register'
+import Layout from '../config/Layout';
 
 const Entry = () => {
     return (
-            <Fragment>
+            <Layout>
                 <fieldset>
                     <legend>Login</legend>
                     <Login />
@@ -13,7 +14,11 @@ const Entry = () => {
                     <legend>Register</legend>
                     <Register />
                 </fieldset>
-            </Fragment>
+                {/* <fieldset>
+                    <legend>{this.props.test}</legend>
+                    <Register />
+                </fieldset> */}
+            </Layout>
         )
 }
 

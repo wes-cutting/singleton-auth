@@ -10,7 +10,7 @@ export const Register = () => {
 
     return (
         <Fragment>
-        { refresh ? <Redirect to={{ pathname:'/'}}/> :
+        { refresh ? <Redirect to={{ pathname:'/'}} props={{test:'test'}}/> :
             <form onSubmit={ async event => {
                 event.preventDefault()
                 const token = await register({username, password, email})
