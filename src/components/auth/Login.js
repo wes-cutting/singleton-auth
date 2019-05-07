@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import { encrypt, login } from '../../config/auth'
 
-export const Login = () => {
+export const Login = (props) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     // console.log('username', username, 'password', password)
     return (
         <form onSubmit={ async event => {
             event.preventDefault()
-            const token = await login(username, password)
+            const token = await props.auth.login(username, password)
             console.log('login token', token)
         }}>
             <input type='text' 
@@ -18,7 +17,7 @@ export const Login = () => {
             <input type='password' 
                 placeholder='Password' 
                 onChange={event => {
-                    const encryptedPW = encrypt(event.target.value)
+                    const encryptedPW = props.auth.encrypt(event.target.value)
                     setPassword(encryptedPW)
                 }} />
             <input type='submit' value='Login' />

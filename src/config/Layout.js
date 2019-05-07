@@ -15,7 +15,7 @@ const Layout = ({children}) => {
         <div className="site">
             <Navbar className='theme' dark>
                 <Link to="/" className="mr-auto navbar-brand">Template</Link>
-                <Dropdown isOpen={!collapsed} toggle={() => setCollapsed(!collapsed)} direction='left' >
+                <Dropdown isOpen={!collapsed} toggle={() => setCollapsed(!collapsed)} direction='down' >
                     <DropdownToggle
                         tag="span"
                         onClick={() => setCollapsed(!collapsed)}
@@ -45,40 +45,5 @@ const Layout = ({children}) => {
         </div>
     )
 }
-
-// class LayoutOld extends Component {
-//     render() {
-//         return (
-//             <div className="site">
-//                 <Navbar bg="dark" expand="lg" variant="dark">
-//                     <NavbarBrand>
-//                         <Link to='/'>
-//                             Template
-//                         </Link>
-//                     </NavbarBrand>
-//                     <Collapse id="basic-navbar-nav">
-//                         <Nav className="mr-auto">
-//                         </Nav>
-//                         <Nav className="float-right">
-//                             <UncontrolledDropdown className="float-right" title="Dropdown" id="basic-nav-dropdown">
-//                                 <Link className='navLink' to='/'>
-//                                     Home
-//                                 </Link>
-//                                 <DropdownItem divider/>
-//                                 <Link className='navLink' to='/entry'>
-//                                     Entry
-//                                 </Link>
-//                             </UncontrolledDropdown>
-//                         </Nav>
-//                     </Collapse>
-//                 </Navbar>
-//                 <div className="centered content">
-//                     <div>{this.props.children}</div>
-//                 </div>
-//                 <footer className="centered theme">Thanks for stopping by!</footer>
-//             </div>
-//         );
-//     }
-// }
 
 export default Layout;

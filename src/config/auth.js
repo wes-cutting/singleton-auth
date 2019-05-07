@@ -9,7 +9,7 @@ export let user_token = ''
 export let loggedIn = false
 
 export const encrypt = (value) => {
-  const hash = crypto.createHash('SHA256')
+  const hash = crypto.createHash(process.env.REACT_APP_ENCRYPT_ALGO)
   hash.update(value)
   return hash.digest('hex')
 }

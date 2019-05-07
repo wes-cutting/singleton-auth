@@ -2,16 +2,16 @@ import React from 'react'
 import { Login } from '../components/auth/Login'
 import { Register } from '../components/auth/Register'
 
-const Entry = () => {
+const Entry = (props) => {
     return (
             <>
                 <fieldset>
                     <legend>Login</legend>
-                    <Login />
+                    <Login auth={props.auth}/>
                 </fieldset>
                 <fieldset>
                     <legend>Register</legend>
-                    <Register />
+                    <Register auth={props.auth}/>
                 </fieldset>
                 {/* <fieldset>
                     <legend>{this.props.test}</legend>

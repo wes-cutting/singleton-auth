@@ -3,9 +3,8 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Layout from './config/Layout'
 import Home from './pages';
 import Entry from './pages/Entry'
-// import Callback from './Callback/Callback';
 
-const auth = 'auth'
+const auth = require('./config/auth')
 
 // const handleAuthentication = ({ location }) => {
 //     if (/access_token|id_token|error/.test(location.hash)) {
@@ -17,8 +16,8 @@ export const makeMainRoutes = () => {
     return (
         <Router>
             <Layout>
-                <Route exact path='/entry' render={(props) => <Entry auth={auth} {...props} />} />
-                <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
+                <Route exact path='/entry' render={({props}) => <Entry auth={auth} {...props} />} />
+                <Route exact path="/" render={({props}) => <Home auth={auth} {...props} />} />
                 {/* <Route path="/callback" render={(props) => {
                     handleAuthentication(props);
                     return <Callback {...props} />

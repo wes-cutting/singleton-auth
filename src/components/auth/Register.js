@@ -1,8 +1,7 @@
 import React, { useState, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
-import { encrypt, register } from '../../config/auth'
 
-export const Register = () => {
+export const Register = (props) => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,7 +12,7 @@ export const Register = () => {
         { refresh ? <Redirect to={{ pathname:'/'}} props={{test:'test'}}/> :
             <form onSubmit={ async event => {
                 event.preventDefault()
-                const token = await register({username, password, email})
+                const token = await props.auth.register({username, password, email})
                 if(token) setRefresh(!refresh)
                 console.log('register token', token)
             }}>
@@ -28,7 +27,7 @@ export const Register = () => {
                 <input type='password' 
                     placeholder='Password' 
                     onChange={event => {
-                        const encryptedPW = encrypt(event.target.value)
+                        const encryptedPW = props.auth.encrypt(event.target.value)
                         setPassword(encryptedPW)
                     }} />
                 <input type='submit' value='Create Account' />
