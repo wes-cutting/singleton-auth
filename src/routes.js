@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
+import Layout from './config/Layout'
 import Home from './pages';
 import Entry from './pages/Entry'
 // import Callback from './Callback/Callback';
@@ -15,15 +16,15 @@ const auth = 'auth'
 export const makeMainRoutes = () => {
     return (
         <Router>
-            <div>
+            <Layout>
                 <Route exact path='/entry' render={(props) => <Entry auth={auth} {...props} />} />
-                <Route path="/" render={(props) => <Home auth={auth} {...props} />} />
+                <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
                 {/* <Route path="/callback" render={(props) => {
                     handleAuthentication(props);
                     return <Callback {...props} />
                 }} /> */}
                 <Refresh path="/refresh" />
-            </div>
+            </Layout>
         </Router>
     );
 }

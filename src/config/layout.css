@@ -8,10 +8,6 @@ header {
 footer {
     width: 100%;
 }
-.theme {
-    background-color: rgb(36, 36, 38);
-    color: rgb(250, 183, 31); 
-}
 .centered {
     text-align: center;
 }
@@ -29,4 +25,14 @@ footer {
     display: block;
     height: 0;
     visibility: hidden;
+}
+.navLink {
+    color: inherit;
+}
+.navLink:hover {
+    text-decoration: none;
+}
+.dropMenu {
+    text-align: center;
+    min-width: 5vw;
 }
